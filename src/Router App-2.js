@@ -1,25 +1,23 @@
 import "./App.css";
 import React from "react";
-import Home from "./Router/Home.js";
-import About from "./Router/About.js";
+import Home from "./Router/Home";
+import About from "./Router/About";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1>There Are 2 links on this page</h1>
+      <h1>Todo List</h1>
       <Router>
-        <h3>Go to any link blew</h3>
-        <nav exact={false}>
-          <Link to="/home">Home</Link>
+          <Link to="/Home">Home Pages</Link>
           <br></br>
-          <Link to="/about">About</Link>
-        </nav>
-        <Route path="/home">
-          {" "}
-          <Home />
+          <Link to="About">About Page </Link>
+        
+
+        <Route path="/Home">
+          Component={Home}
         </Route>
-        <Route path="/about">
+        <Route path="/About">
           {" "}
           <About />
         </Route>

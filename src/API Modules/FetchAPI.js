@@ -2,7 +2,7 @@ import React, {useState,useEffect} from "react";
 
 function FetchApi() {
 
-    const [user,setUser] = useState([]);
+    const [setUser] = useState([]);
 
     const fetchData =()=>{
         fetch("https://api-nodejs-todolist.herokuapp.com/user/me")

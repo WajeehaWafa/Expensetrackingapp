@@ -1,12 +1,21 @@
-import React  from 'react';
-import Axios from 'axios';
+import React from "react";
+import axios from "axios";
 
 function Axs() {
   const Fetch = () => {
-    Axios.get("https://api-nodejs-todolist.herokuapp.com/user/me")
-    .than((response) => {
+    axios
+      .post("https://api-nodejs-todolist.herokuapp.com/user/register", {
+        name: "Muhammad Nur Ali",
+        email: "4387687688656564@gmail.com",
+        password: "12345678",
+        age: 20,
+      })
+      .then((response) => {
         console.log(response);
-    });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div>
@@ -14,5 +23,5 @@ function Axs() {
       <button onClick={Fetch}>FetchData</button>
     </div>
   );
-};
+}
 export default Axs;
