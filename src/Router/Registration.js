@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Validation from "./Validation";
-import LoginForm from "./About";
 import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 
 import axios from "axios";
@@ -20,24 +19,27 @@ const Registration = () => {
     setErrors(Validation(values));
     console.log("Values Added");
     console.log(values);
-    setloggedin(true);
+    
     //<Redirect to ="/About"/>
 
     axios
-    .post("https://api-nodejs-todolist.herokuapp.com/user/register", {
-      name: values.name,
-      email: values.email,
-      password: values.password,
-      age: values.age
-
-    })
-    .then((response) => {
-      console.log(response);
-      console.log("Response sent");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .post("https://api-nodejs-todolist.herokuapp.com/user/register", {
+        name: values.name,
+        email: values.email,
+        password: values.password,
+        age: values.age,
+      })
+      
+      .then((response) => {
+        console.log(response);
+        console.log("Response sent");
+        setloggedin(true);
+      })
+      .catch((err) => {
+        console.log("UnAuthorized");
+        console.log(err);
+        
+      });
   };
   const handleChange = (event) => {
     setValues({
@@ -46,11 +48,8 @@ const Registration = () => {
     });
   };
   if (loggedin) {
-    return <Redirect to ="/LoginForm"/>
-    
+    return <Redirect to="/" />;
   }
-
-  
 
   return (
     <div className="container">
@@ -116,8 +115,7 @@ const Registration = () => {
         </form>
         <br />
         <div>
-          {" "}
-          Have Registered??<Link to="LoginForm">Login </Link>{" "}
+          Have Registered??<Link to="/">Login </Link>
         </div>
       </div>
     </div>

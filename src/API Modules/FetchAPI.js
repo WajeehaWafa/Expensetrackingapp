@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+/*import React, {useState,useEffect} from "react";
 
 function FetchApi() {
 
@@ -27,4 +27,4 @@ function FetchApi() {
 }
 
 
-export default FetchApi;
+export default FetchApi;*/

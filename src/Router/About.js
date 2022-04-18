@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import Validation from './Validation'
-import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Home from './Home'
+import SaveIntoLocalStorage from './SLocalstorage'
+import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
+import Registration from './Registration'
 
 const LoginForm = () => {
     const [values, setValues] = useState({
@@ -25,12 +27,16 @@ const LoginForm = () => {
     .then((response) => {
       console.log(response);
       console.log("Response sent");
+      SaveIntoLocalStorage(response.data);
+      setValid(true);
     })
     .catch((err) => {
+      console.log("UnAuthorized");
       console.log(err);
+      <div>UnAuthorized</div>
     });
 
-      setValid(true);
+      
     };
       const handleChange = (event) => {
         setValues({
@@ -78,6 +84,10 @@ const LoginForm = () => {
             <button className="submit" onClick={handleFormSubmit}>
               Login
             </button>
+            </div>
+            <br />
+          <div> 
+           Not Registered yet??<Link to="Registration">Registration </Link>
           </div>
         </form>
       </div>
