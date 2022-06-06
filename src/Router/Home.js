@@ -1,31 +1,18 @@
-import react, { useState } from "react";
-import axios from "axios";
-import "./About";
-import { Link, Redirect } from "react-router-dom";
+import React from "react";
+import ExpenseTracker from "../components/ExpenseTracker";
+import ContextProvider from "../global/contextApi/TransactionsContext";
 
-function Home(response) {
-  var [loggedOut, setloggedOut] = useState(false);
-  
-  const handleChange = (event) => {
-    console.log("LogOut Response");
-        
-      localStorage.removeItem('userDetails');
-
-    setloggedOut(true);
-  };
-  if (loggedOut) {
-    return <Redirect to="/" />;
-  }
-
+function App() {
   return (
-    <div className="Home">
-      <h1>Home Page</h1>
-      <p>This is my Home Page</p>
-      <button to onClick={handleChange}>
-        Logout
-      </button>
-    </div>
+    <ContextProvider>
+      <ExpenseTracker />
+    </ContextProvider>
   );
 }
 
-export default Home;
+export default App;
+
+
+
+
+

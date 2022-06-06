@@ -7,9 +7,7 @@ import axios from "axios";
 const Registration = () => {
   const [values, setValues] = useState({
     name: "",
-    email: "",
     password: "",
-    age: "null",
   });
   var [errors, setErrors] = useState({});
   var [loggedin, setloggedin] = useState(false);
@@ -23,19 +21,17 @@ const Registration = () => {
     //<Redirect to ="/About"/>
 
     axios
-      .post("https://api-nodejs-todolist.herokuapp.com/user/register", {
+      .post("https://expense-kamran.herokuapp.com/signup", {
         name: values.name,
-        email: values.email,
         password: values.password,
-        age: values.age,
       })
       
       .then((response) => {
-        console.log(response);
-        console.log("Response sent");
+        //console.log(response);
+        console.log("Signup Response sent");
         setloggedin(true);
       })
-      .catch((err) => {
+       .catch((err) => {
         console.log("UnAuthorized");
         console.log(err);
         
@@ -70,19 +66,6 @@ const Registration = () => {
             />
             {errors.name && <p className="error">{errors.name}</p>}
           </div>
-          <div className="email">
-            <label className="label">Email</label>
-            <input
-              //id="email"
-              className="input"
-              type="email"
-              name="email"
-              placeholder="Type Email"
-              value={values.email}
-              onChange={handleChange}
-            />
-            {errors.email && <p className="error">{errors.email}</p>}
-          </div>
           <div className="password">
             <label className="label">Type Password</label>
             <input
@@ -96,17 +79,7 @@ const Registration = () => {
             />
             {errors.password && <p className="error">{errors.password}</p>}
           </div>
-          <div className="password">
-            <label className="label">Type Age</label>
-            <input
-              className="input"
-              type="number"
-              name="age"
-              placeholder="Type Age"
-              value={values.age}
-              onChange={handleChange}
-            />
-          </div>
+          
           <div>
             <button type="submit" className="submit" onClick={handleFormSubmit}>
               Sign up
@@ -114,7 +87,8 @@ const Registration = () => {
           </div>
         </form>
         <br />
-        <div>
+        <br />
+        <div className="in">
           Have Registered??<Link to="/">Login </Link>
         </div>
       </div>

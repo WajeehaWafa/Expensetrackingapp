@@ -1,0 +1,136 @@
+/* COLORS */
+
+/* Text  Colors */
+.darkgreen{
+    color: darkgreen;
+  }
+  .darkred{
+    color: darkred;
+  }
+  .darkcyan{
+    color: darkblue;
+  }
+  .text-color{
+    color: black;
+  }
+  .color-white{
+    color: white;
+  }
+  /* Background Colors */
+  .bg-white{
+    background-color: white;
+  }
+  .bg-darkgray{
+    background-color: #e0dfdf;
+  }
+  .bg-darkblue{
+    background-color: darkblue;
+  }
+  
+  /* BORDER */
+  .f {
+    font-weight: bold;
+
+  }
+  .h {
+    font-weight: 700;
+  }
+  
+  /* Borders color */
+  .income-border{
+    color: darkgreen;
+    border-left: darkgreen;
+    font-weight: 600;
+  }
+  .expense-border{
+    color: darkred;
+    border-left: darkred;
+    font-weight: 600;
+  }
+  /* Border Style */
+  .border-none{
+    border: none;
+  }
+  .hr{
+    border-bottom: 2px solid lightgrey;
+  }
+  .out-line-darkcyan{
+    outline-color: darkcyan;
+  }
+  .outline-none{
+    outline: none;
+  }
+  
+  
+  /* SHADOW */
+  .shadow{
+    box-shadow: 5px 5px 5px grey;
+  }
+  
+  /* PADDINGs */
+  
+  /* Padding */
+  .pad-15px{
+    padding: 15px;
+  }
+  .pad-7px{
+    padding: 7px;
+  }
+  /* Bottom Padding */
+  .pad-bottom-7px{
+    padding-bottom: 7px;
+  }
+  
+  /* TEXT CENTER */
+  .text-center{
+    text-align: center;
+  }
+  
+  /* FONT SIZE IN PX */
+  .font-size-12px{
+    font-size: 12px;
+  }
+  .font-size-20px{
+    font-size: 20px;
+  }
+  .font-size-30px{
+    font-size: 30px;
+  }
+  
+  /* FLEX */
+  .flex{
+    display: flex;
+  }
+  .space-around{
+    justify-content: space-around;
+  }
+  .space-between{
+    justify-content: space-between;
+  }
+  
+  /* MARGIN */
+  .margin-bottom-10px{
+    margin-bottom: 10px;
+  }
+  
+  /* LIST STYLE */
+  .list-style-none{
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* WIDTH | HEIGHT | CURSUR POINTER */
+  .container{
+    max-width: 400px;
+    min-height: auto;
+    background-color: #efefef;
+    margin: 30px auto;
+    padding: 1px 35px;
+  }
+  .width-100{
+    width: 100%;
+  }
+  .curser-pointer{
+    cursor: pointer;
+  }
+  
